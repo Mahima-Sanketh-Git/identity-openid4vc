@@ -99,6 +99,17 @@ public class PresentationAuthenticator extends AbstractApplicationAuthenticator
     }
 
     /**
+     * Identity providers configured with the wallet authenticator cannot be shared with child organizations.
+     *
+     * @return Always false.
+     */
+    @Override
+    public boolean isShareableWithChildOrganizations() {
+
+        return false;
+    }
+
+    /**
      * Initiate the authentication request to the wallet.
      *
      * @param request  HTTP request.
